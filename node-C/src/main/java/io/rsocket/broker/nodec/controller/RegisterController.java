@@ -1,4 +1,4 @@
-package io.rsocket.broker.nodea.controller;
+package io.rsocket.broker.nodec.controller;
 
 import io.scalecube.cluster.Cluster;
 import org.springframework.beans.factory.annotation.Autowired;

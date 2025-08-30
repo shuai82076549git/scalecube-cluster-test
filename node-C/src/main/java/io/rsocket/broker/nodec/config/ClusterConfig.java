@@ -20,7 +20,7 @@ public class ClusterConfig {
        return new ClusterImpl()
                 .config(opts -> opts.memberAlias("Carol"))
                 .config(opts -> opts.metadata(Collections.singletonMap("name", "Carol")))
-                .membership(opts -> opts.seedMembers("10.0.0.144:57765"))
+                .membership(opts -> opts.seedMembers("localhost:57765"))
                 .transportFactory(TcpTransportFactory::new)
                 .handler(
                         cluster -> {

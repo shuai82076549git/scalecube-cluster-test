@@ -17,6 +17,15 @@
     <properties>
         <java.version>21</java.version>
     </properties>
+
+    <modules>
+        <module>node-A</module>
+        <module>node-B</module>
+        <module>node-C</module>
+        <module>client-A</module>
+        <module>server-A</module>
+    </modules>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

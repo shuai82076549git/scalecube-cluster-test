@@ -1,16 +1,10 @@
-package io.rsocket.broker.servera.register;
+package com.example.clienta.register;
 
-import io.rsocket.metadata.WellKnownMimeType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
-import org.springframework.messaging.rsocket.MetadataExtractor;
 import org.springframework.messaging.rsocket.RSocketRequester;
 import org.springframework.stereotype.Component;
-import org.springframework.util.MimeType;
-import org.springframework.util.MimeTypeUtils;
-
-import java.util.List;
 
 @Component
 public class Register implements ApplicationRunner {

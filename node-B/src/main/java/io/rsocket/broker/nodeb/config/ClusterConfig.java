@@ -19,10 +19,10 @@ public class ClusterConfig {
     @Bean
     public Cluster cluster() {
        return new ClusterImpl()
-               //.config(opts -> opts.memberAlias("Bob"))
-               //.config(opts -> opts.metadata(Collections.singletonMap("name", "Bob")))
+               .config(opts -> opts.memberAlias("Bob"))
+               .config(opts -> opts.metadata(Collections.singletonMap("name", "Bob")))
                .transport(c -> TransportConfig.defaultConfig().port(57766))
-               .membership(opts -> opts.seedMembers("10.0.0.144:57765"))
+               .membership(opts -> opts.seedMembers("localhost:57765"))
                .transportFactory(TcpTransportFactory::new)
                .handler(
                        cluster -> {

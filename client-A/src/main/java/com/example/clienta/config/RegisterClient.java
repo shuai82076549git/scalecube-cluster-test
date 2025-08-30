@@ -1,4 +1,4 @@
-package io.rsocket.broker.servera.config;
+package com.example.clienta.config;
 
 import io.rsocket.core.Resume;
 import io.rsocket.loadbalance.LoadbalanceTarget;
@@ -15,7 +15,6 @@ import reactor.core.publisher.Flux;
 import reactor.util.retry.Retry;
 
 import java.time.Duration;
-import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -24,7 +23,7 @@ import java.util.stream.Collectors;
 public class RegisterClient {
     private static final Logger log = Logger.getLogger(RegisterClient.class.getName());
 
-    String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiYXVkIjoiaGVsbG8tc2VydmljZSIsInNjb3BlIjoiVVNFUiIsImlzcyI6ImhlbGxvLXNlcnZpY2UtZGVtbyIsImV4cCI6MTc1NjY0NzQzMywianRpIjoiMzZhM2RmMmYtOWNkNC00MGZhLTljZTktNWQ4NjlhM2YyM2RiIn0.tAlxXqrlVB6HCkj1YXYuw2hRf6-OStp6FIflKPtDRCo";
+    String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwiYXVkIjoiaGVsbG8tc2VydmljZSIsInNjb3BlIjoiVVNFUiIsImlzcyI6ImhlbGxvLXNlcnZpY2UtZGVtbyIsImV4cCI6MTc1NjY0NzU5MywianRpIjoiMDk1ZTFiNmEtMWM1Zi00OGExLThlZTUtYWY3NTc4MjVhZGQ0In0.AcTE7f2c3XM-0lpJeY_h1775lhd0WLx6O5oJct9xFw8";
     @Bean
     public Resume resume() {
         Resume resume = new Resume()
@@ -46,7 +45,7 @@ public class RegisterClient {
                 .dataMimeType(MimeTypeUtils.APPLICATION_JSON)
                 .rsocketStrategies(rsocketStrategies)
                 .setupMetadata(token, BearerTokenMetadata.BEARER_AUTHENTICATION_MIME_TYPE)
-                .setupRoute("A")
+                .setupRoute("B")
                 .transports(rSocketServerInstance(), new RoundRobinLoadbalanceStrategy());
     }
 
